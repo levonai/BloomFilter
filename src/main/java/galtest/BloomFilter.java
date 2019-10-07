@@ -31,7 +31,7 @@ public class BloomFilter {
     }
 
     public void addWord (String s) {
-        int[] hashValues = hash.hash1(s);
+        int[] hashValues = hash.hash(s);
 
         for (int i = 0; i < k; i++) {
             map.setBit(hashValues[i]);
@@ -39,7 +39,7 @@ public class BloomFilter {
     }
 
     public boolean getWord (String s) {
-        int[] hashValues = hash.hash1(s);
+        int[] hashValues = hash.hash(s);
 
         boolean isValid = true;
         for (int i = 0; i < k; i++) {
